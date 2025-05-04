@@ -1,0 +1,234 @@
+[
+  {
+    "thumbnail": "https://i.ibb.co.com/2YNN1Hrh/tech-future-summit.jpg",
+    "name": "Tech Future Summit 2025",
+    "category": "Tech",
+    "description": "Tech Future Summit 2025 is a global event uniting pioneers in AI, blockchain, and emerging technologies. Attendees can expect keynote speeches from top engineers, product demos, hands-on workshops, and expert panels addressing the future of innovation and software engineering trends.",
+    "date": "2025-06-15",
+    "location": "Dhaka, Bangladesh",
+    "entryFee": "Free",
+    "organizer": "TechVision BD",
+    "contactEmail": "info@techvisionbd.com",
+    "website": "https://techfuturesummit.com",
+    "tags": ["AI", "Blockchain", "Innovation", "Tech"],
+    "duration": "10:00 AM - 6:00 PM",
+    "speakers": ["Dr. Ahsan Karim", "Maya Rahman", "John Doe"],
+    "schedule": [
+      {
+        "time": "10:00 AM",
+        "activity": "Opening Keynote"
+      },
+      {
+        "time": "11:00 AM",
+        "activity": "Panel Discussion: AI in 2025"
+      },
+      {
+        "time": "01:00 PM",
+        "activity": "Lunch Break & Networking"
+      },
+      {
+        "time": "03:00 PM",
+        "activity": "Blockchain Workshop"
+      }
+    ]
+  },
+  {
+    "thumbnail": "https://i.ibb.co.com/HLfFqbzZ/contemporary-art-expo.jpg",
+    "name": "Modern Art Expo",
+    "category": "Art",
+    "description": "The Modern Art Expo brings together contemporary artists from South Asia showcasing groundbreaking visual arts, sculptures, installations, and mixed media exhibits. Visitors will experience an eclectic mix of modern expression and cultural commentary.",
+    "date": "2025-06-20",
+    "location": "Kolkata, India",
+    "entryFee": "$5",
+    "organizer": "ArtSpace Collective",
+    "contactEmail": "hello@artspaceexpo.org",
+    "website": "https://modernartexpo.com",
+    "tags": ["Art", "Culture", "Contemporary"],
+    "duration": "11:00 AM - 8:00 PM",
+    "speakers": ["Priya Sen", "Ravi Mehta"],
+    "schedule": [
+      {
+        "time": "11:00 AM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "12:00 PM",
+        "activity": "Gallery Tour"
+      },
+      {
+        "time": "03:00 PM",
+        "activity": "Artist Talk"
+      }
+    ]
+  },
+  {
+    "thumbnail": "https://i.ibb.co.com/Kpqss8Y9/startup.jpg",
+    "name": "Startup Grind Meetup",
+    "category": "Tech",
+    "description": "This meetup offers aspiring entrepreneurs and founders a chance to network, pitch ideas, and engage in conversations with successful startup veterans. A casual yet insightful event powered by the global Startup Grind community.",
+    "date": "2025-06-22",
+    "location": "Chattogram, Bangladesh",
+    "entryFee": "Free",
+    "organizer": "Startup Grind BD",
+    "contactEmail": "contact@startupgrindbd.com",
+    "website": "https://startupgrind.com/chattogram",
+    "tags": ["Entrepreneurship", "Networking", "Startups"],
+    "duration": "5:00 PM - 9:00 PM",
+    "speakers": ["Tariq Anwar", "Lisa Chow"],
+    "schedule": [
+      {
+        "time": "05:00 PM",
+        "activity": "Welcome & Networking"
+      },
+      {
+        "time": "06:00 PM",
+        "activity": "Fireside Chat"
+      },
+      {
+        "time": "07:30 PM",
+        "activity": "Startup Pitches"
+      }
+    ]
+  },
+  {
+    "thumbnail": "https://i.ibb.co.com/GvZHCmR8/photography.jpg",
+    "name": "Photography Workshop 101",
+    "category": "Art",
+    "description": "Perfect for beginners, this workshop covers the basics of camera settings, composition, lighting, and post-processing. Participants will receive hands-on training and feedback from expert photographers.",
+    "date": "2025-07-01",
+    "location": "Sylhet, Bangladesh",
+    "entryFee": "$10",
+    "organizer": "LensMasters",
+    "contactEmail": "events@lensmasters.com",
+    "website": "https://lensmasters.com/workshop",
+    "tags": ["Photography", "Workshop", "Creativity"],
+    "duration": "9:00 AM - 4:00 PM",
+    "speakers": ["Shahidul Islam", "Anika Chowdhury"],
+    "schedule": [
+      {
+        "time": "09:00 AM",
+        "activity": "Introduction to Cameras"
+      },
+      {
+        "time": "11:00 AM",
+        "activity": "Outdoor Photo Session"
+      },
+      {
+        "time": "02:00 PM",
+        "activity": "Editing Basics"
+      }
+    ]
+  },
+  {
+    "thumbnail": "https://i.ibb.co.com/pvLLw9Vx/view-local-artisan-market-craft-fair.jpg",
+    "name": "Local Crafts Fair",
+    "category": "Art",
+    "description": "Celebrate local artisans at this vibrant fair featuring traditional handcrafts, textiles, pottery, jewelry, and live demonstrations. A family-friendly weekend event to support community talent.",
+    "date": "2025-07-05",
+    "location": "Rajshahi, Bangladesh",
+    "entryFee": "Free",
+    "organizer": "Crafts United",
+    "contactEmail": "info@craftsunited.org",
+    "website": "https://localcraftsfair.com",
+    "tags": ["Handmade", "Culture", "Fair"],
+    "duration": "10:00 AM - 6:00 PM",
+    "speakers": [],
+    "schedule": [
+      {
+        "time": "10:00 AM",
+        "activity": "Fair Opens"
+      },
+      {
+        "time": "12:00 PM",
+        "activity": "Live Pottery Demo"
+      },
+      {
+        "time": "03:00 PM",
+        "activity": "Traditional Dance"
+      }
+    ]
+  },
+  {
+    "thumbnail": "https://i.ibb.co.com/sp1pkrSt/football.jpg",
+    "name": "National Youth Football Championship",
+    "category": "Sports",
+    "description": "Watch the best young talent in Bangladesh compete in a thrilling football championship featuring intense matches and enthusiastic fans.",
+    "date": "2025-07-12",
+    "location": "Khulna, Bangladesh",
+    "entryFee": "Free",
+    "organizer": "Bangladesh Football Federation",
+    "contactEmail": "sports@bff.org.bd",
+    "website": "https://bff.org.bd/youthcup",
+    "tags": ["Football", "Youth", "Competition"],
+    "duration": "4:00 PM - 8:00 PM",
+    "speakers": [],
+    "schedule": [
+      {
+        "time": "04:00 PM",
+        "activity": "Opening Match"
+      },
+      {
+        "time": "06:30 PM",
+        "activity": "Final Match"
+      }
+    ]
+  },
+  {
+    "thumbnail": "https://i.ibb.co.com/Mk7BG99W/cricket-match.jpg",
+    "name": "Summer Cricket League Final",
+    "category": "Sports",
+    "description": "The Summer League comes to a head in this exciting cricket final. Fans can enjoy a festival-like atmosphere with music, food stalls, and high-stakes sports action.",
+    "date": "2025-07-18",
+    "location": "Barisal, Bangladesh",
+    "entryFee": "$3",
+    "organizer": "Cricket Board BD",
+    "contactEmail": "league@cricketbd.com",
+    "website": "https://cricketbd.com/summerfinal",
+    "tags": ["Cricket", "Sports", "Live Event"],
+    "duration": "3:00 PM - 9:00 PM",
+    "speakers": [],
+    "schedule": [
+      {
+        "time": "03:00 PM",
+        "activity": "Opening Ceremony"
+      },
+      {
+        "time": "04:00 PM",
+        "activity": "Match Begins"
+      }
+    ]
+  },
+  {
+    "thumbnail": "https://i.ibb.co.com/zwLW9vB/hackathon.jpg",
+    "name": "Code & Coffee Hackathon",
+    "category": "Tech",
+    "description": "Join 100+ developers in a high-energy 24-hour hackathon, where ideas come to life over coffee, code, and collaboration. Prizes awarded for best innovation, UI/UX, and social impact.",
+    "date": "2025-07-25",
+    "location": "Dhaka, Bangladesh",
+    "entryFee": "$20",
+    "organizer": "DevNation",
+    "contactEmail": "hello@devnation.org",
+    "website": "https://devnation.org/codecoffee",
+    "tags": ["Hackathon", "Coding", "Innovation"],
+    "duration": "9:00 AM (Day 1) - 9:00 AM (Day 2)",
+    "speakers": ["Farhan Malik", "Tina Alam"],
+    "schedule": [
+      {
+        "time": "09:00 AM",
+        "activity": "Kickoff Briefing"
+      },
+      {
+        "time": "12:00 PM",
+        "activity": "Team Formation"
+      },
+      {
+        "time": "03:00 PM",
+        "activity": "Coding Begins"
+      },
+      {
+        "time": "Next Day 08:00 AM",
+        "activity": "Project Presentations"
+      }
+    ]
+  }
+]
