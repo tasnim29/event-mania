@@ -9,7 +9,7 @@ import { useLoaderData } from "react-router";
 
 const Hero = () => {
   const data = useLoaderData();
-  console.log(data);
+
   return (
     <div className="w-full h-[400px] md:h-[500px]">
       <Swiper

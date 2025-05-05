@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../../AuthProvider/AuthContext";
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        alert("signout success");
+      })
+      .catch((error) => {
+        alert(" failed", error);
+      });
+  };
   const links = (
     <>
       <li className="font-semibold">
@@ -15,8 +26,9 @@ const Navbar = () => {
       </li>
     </>
   );
+
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm px-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,18 +49,28 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
           >
             {links}
           </ul>
         </div>
-        <a className=" text-xl">Event Explorer</a>
+        <a className="text-xl font-bold ml-2">Event Explorer</a>
       </div>
+
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1"> {links}</ul>
+        <ul className="menu menu-horizontal space-x-4">{links}</ul>
       </div>
+
       <div className="navbar-end">
-        <Link className="btn">Sign In</Link>
+        {user ? (
+          <button onClick={handleSignOut} className="btn btn-sm mr-2">
+            Sign Out
+          </button>
+        ) : (
+          <Link to="/auth/signin" className="btn btn-sm mr-2">
+            Sign In
+          </Link>
+        )}
       </div>
     </div>
   );
