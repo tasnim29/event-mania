@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
 
 const Signup = () => {
-  const { setUser, signUpUser } = useContext(AuthContext);
+  const { setUser, signUpUser, updateUserProfile } = useContext(AuthContext);
   const handleSignUp = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -17,8 +17,16 @@ const Signup = () => {
       .then((userCredential) => {
         const userInformation = userCredential.user;
         console.log(userInformation);
-        setUser(userInformation);
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...userInformation, displayName: name, photoURL: photo });
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(userInformation);
+          });
       })
+
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);

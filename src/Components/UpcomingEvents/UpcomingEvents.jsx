@@ -6,12 +6,12 @@ const UpcomingEvents = () => {
 
   return (
     <>
-      <div>
-        <h1 className="text-3xl font-bold text-primary text-center">
+      <div className="container flex flex-col items-center mx-auto  md:p-10 md:px-12">
+        <h1 className="p-4 text-4xl text-primary shadow-2xl font-semibold leading-none text-center">
           UpComing Events
         </h1>
       </div>
-      <div className="px-4 py-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="px-4  grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {data.map((event, index) => (
           <div key={index} className="card bg-base-100 w-96 shadow-2xl">
             <figure className=" overflow-hidden g">

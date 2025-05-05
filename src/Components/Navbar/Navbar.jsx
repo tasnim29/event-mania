@@ -61,7 +61,19 @@ const Navbar = () => {
         <ul className="menu menu-horizontal space-x-4">{links}</ul>
       </div>
 
-      <div className="navbar-end">
+      <div className="navbar-end space-x-2">
+        <div className="relative group cursor-pointer">
+          {user && (
+            <img
+              className="w-8 h-8 rounded-full hover:"
+              src={user.photoURL}
+              alt=""
+            />
+          )}
+          <div className="absolute text-black -top-0.5 -left-17   opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            {user?.displayName}
+          </div>
+        </div>
         {user ? (
           <button onClick={handleSignOut} className="btn btn-sm mr-2">
             Sign Out

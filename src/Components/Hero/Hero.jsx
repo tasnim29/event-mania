@@ -11,7 +11,7 @@ const Hero = () => {
   const data = useLoaderData();
 
   return (
-    <div className="w-full h-[400px] md:h-[500px]">
+    <div className="w-full h-[500px] ">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
