@@ -8,6 +8,7 @@ import Loader from "../Components/Loader/Loader";
 import AuthLayouts from "../Layouts/AuthLayouts";
 import Signin from "../Pages/Signin";
 import Signup from "../Pages/Signup";
+import PrivateRoutes from "../Private/PrivateRoutes";
 
 export const router = createBrowserRouter([
   {
@@ -26,13 +27,21 @@ export const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        Component: Blog,
+        element: (
+          <PrivateRoutes>
+            <Blog></Blog>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/eventDetails/:name",
         hydrateFallbackElement: <Loader></Loader>,
         loader: () => fetch("/events.json"),
-        Component: EventDetails,
+        element: (
+          <PrivateRoutes>
+            <EventDetails></EventDetails>
+          </PrivateRoutes>
+        ),
       },
     ],
   },
