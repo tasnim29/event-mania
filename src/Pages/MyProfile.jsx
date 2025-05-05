@@ -2,7 +2,27 @@ import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthContext";
 
 const MyProfile = () => {
-  const { user } = useContext(AuthContext);
+  const { user, updateUserProfile, setUser } = useContext(AuthContext);
+
+  const handleUpdateProfile = (e) => {
+    e.preventDefault();
+    const updatedName = e.target.name.value;
+    const updatedPhotoURL = e.target.photoURL.value;
+    // console.log(email, photoURL);
+
+    updateUserProfile({ displayName: updatedName, photoURL: updatedPhotoURL })
+      .then(() => {
+        setUser({
+          ...user,
+          displayName: updatedName,
+          photoURL: updatedPhotoURL,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        setUser(user);
+      });
+  };
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 space-y-10  lg:mt-24 mt-16  w-11/12 mx-auto">
       {/* left div */}
@@ -23,14 +43,15 @@ const MyProfile = () => {
       </div>
       {/* right div */}
       <div className="bg-gray-800 max-w-md w-full mx-auto p-6 shadow-2xl rounded-xl mb-10">
-        <form className="fieldset space-y-2">
+        <form onSubmit={handleUpdateProfile} className="fieldset space-y-2">
           <label className="label text-white" htmlFor="origin">
             Name
           </label>
           <input
+            name="name"
             required
             type="text"
-            id="origin"
+            id="name"
             className="input input-bordered w-full text-black"
             placeholder="Your Name"
           />
@@ -40,6 +61,7 @@ const MyProfile = () => {
             PhotoURL
           </label>
           <input
+            name="photoURL"
             required
             type="text"
             id="photoURL"
@@ -48,7 +70,7 @@ const MyProfile = () => {
           />
 
           <button type="submit" className="btn btn-outline btn-secondary ">
-            Start Booking
+            Update Profile
           </button>
         </form>
       </div>
