@@ -7,10 +7,10 @@ const MainLayout = () => {
   return (
     <>
       <div>
-        <header className="w-11/12 mx-auto">
+        <header className=" mt-5">
           <Navbar></Navbar>
         </header>
-        <main className="my-10">
+        <main className=" min-h-[calc(100vh-200px)]">
           <Outlet></Outlet>
         </main>
       </div>

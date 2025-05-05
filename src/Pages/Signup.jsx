@@ -1,16 +1,29 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
 
 const Signup = () => {
-  const { setUser, signUpUser, updateUserProfile } = useContext(AuthContext);
+  const navigation = useNavigate();
+  const { setUser, signUpUser, updateUserProfile, googleSignInUser } =
+    useContext(AuthContext);
   const handleSignUp = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, photo, email, password);
+    // console.log(name, photo, email, password);
+
+    const hasLowercase = /(?=.*[a-z])/.test(password);
+    const hasUppercase = /(?=.*[A-Z])/.test(password);
+    const hasMinLength = /.{6,}/.test(password);
+
+    if (!hasLowercase || !hasUppercase || !hasMinLength) {
+      return toast.error(
+        "Password must be at least 6 characters, include one lowercase and one uppercase letter."
+      );
+    }
 
     // signUp
     signUpUser(email, password)
@@ -20,6 +33,8 @@ const Signup = () => {
         updateUserProfile({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...userInformation, displayName: name, photoURL: photo });
+            toast.success("Successfully Signed up");
+            setTimeout(() => navigation("/"), 1500);
           })
           .catch((error) => {
             console.log(error);
@@ -32,8 +47,27 @@ const Signup = () => {
         console.log(errorMessage);
       });
   };
+
+  const handleGoogleLogIn = () => {
+    // google sign in
+    googleSignInUser()
+      .then((userCredential) => {
+        const userInformation = userCredential.user;
+
+        setUser(userInformation);
+        toast.success("Successfully Signed up");
+        setTimeout(
+          () => navigation(`${location.state ? location.state : "/"}`),
+          1500
+        );
+        // navigation(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
-    <div className="w-full max-w-md p-8 rounded-xl shadow-lg bg-gray-900 mx-auto mt-16">
+    <div className="w-full max-w-md p-8 rounded-xl shadow-lg bg-gray-900 mx-auto my-16">
       <div className="space-y-6">
         <h1 className="text-3xl text-white font-bold text-center">
           Create an Account
@@ -88,6 +122,7 @@ const Signup = () => {
           </div>
           <div className="my-6">
             <button
+              onClick={handleGoogleLogIn}
               aria-label="Login with Google"
               type="button"
               className="btn btn-outline btn-secondary w-full"
@@ -124,6 +159,7 @@ const Signup = () => {
           </p>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

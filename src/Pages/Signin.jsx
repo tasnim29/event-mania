@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
+import { toast, ToastContainer } from "react-toastify";
 
 const Signin = () => {
-  const { setUser, signInUser } = useContext(AuthContext);
+  const { setUser, signInUser, googleSignInUser } = useContext(AuthContext);
   const location = useLocation();
   //   console.log(location);
   const navigation = useNavigate();
@@ -20,15 +21,40 @@ const Signin = () => {
         const userInformation = userCredential.user;
         // console.log(userInformation);
         setUser(userInformation);
-        navigation(`${location.state ? location.state : "/"}`);
+        toast.success("Successfully Signed in");
+        setTimeout(
+          () => navigation(`${location.state ? location.state : "/"}`),
+          1500
+        );
+        // navigation(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+        toast.error("Invalid password");
       });
   };
+
+  const handleGoogleLogIn = () => {
+    // google sign in
+    googleSignInUser()
+      .then((userCredential) => {
+        const userInformation = userCredential.user;
+
+        setUser(userInformation);
+        toast.success("Successfully Signed in");
+        setTimeout(
+          () => navigation(`${location.state ? location.state : "/"}`),
+          1500
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
-    <div className="w-full max-w-md p-8 rounded-xl shadow-lg bg-gray-900 mx-auto mt-16 text-white">
+    <div className="w-full max-w-md p-8 rounded-xl shadow-lg bg-gray-900 mx-auto my-16 text-white">
       <h2 className="mb-3 text-3xl font-bold text-center">
         Login to your account
       </h2>
@@ -45,9 +71,10 @@ const Signin = () => {
       {/* Google Login */}
       <div className="my-6">
         <button
+          onClick={handleGoogleLogIn}
           aria-label="Login with Google"
           type="button"
-          className="flex items-center justify-center w-full p-3 space-x-3 border border-gray-600 rounded-md hover:bg-gray-800 transition"
+          className="cursor-pointer flex items-center justify-center w-full p-3 space-x-3 border border-gray-600 rounded-md btn btn-outline btn-secondary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,6 +131,7 @@ const Signin = () => {
           Sign In
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

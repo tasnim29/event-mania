@@ -1,13 +1,19 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../AuthProvider/AuthContext";
+import logo from "../../assets/logo.avif";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const handleSignOut = () => {
     signOutUser()
       .then(() => {
-        alert("signout success");
+        Swal.fire({
+          title: "Sign Out Successful!",
+          icon: "success",
+          draggable: true,
+        });
       })
       .catch((error) => {
         alert(" failed", error);
@@ -15,20 +21,20 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <li className="font-semibold">
+      <li className="font-semibold text-xl text-white">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="font-semibold">
+      <li className="font-semibold text-xl text-white">
         <NavLink to="/profile">My profile</NavLink>
       </li>
-      <li className="font-semibold">
+      <li className="font-semibold text-xl text-white">
         <NavLink to="/blog">Blog</NavLink>
       </li>
     </>
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm px-0">
+    <div className="navbar bg-secondary shadow-sm px-20 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +60,10 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="text-xl font-bold ml-2">Event Explorer</a>
+        <div className="flex gap-3">
+          <img className="w-10 h-10" src={logo} alt="" />
+          <a className="text-2xl font-bold ml-2 text-white">Event Mania</a>
+        </div>
       </div>
 
       <div className="navbar-center hidden lg:flex">
@@ -70,7 +79,7 @@ const Navbar = () => {
               alt=""
             />
           )}
-          <div className="absolute text-black -top-0.5 -left-17   opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="absolute text-white font-semibold -top-0.5 -left-17   opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             {user?.displayName}
           </div>
         </div>

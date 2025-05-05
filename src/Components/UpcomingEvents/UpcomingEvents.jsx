@@ -11,9 +11,9 @@ const UpcomingEvents = () => {
           UpComing Events
         </h1>
       </div>
-      <div className="px-4  grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="px-4  grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {data.map((event, index) => (
-          <div key={index} className="card bg-base-100 w-96 shadow-2xl">
+          <div key={index} className="card bg-base-100 shadow-2xl">
             <figure className=" overflow-hidden g">
               <img
                 src={event.thumbnail}

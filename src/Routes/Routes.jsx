@@ -9,6 +9,7 @@ import AuthLayouts from "../Layouts/AuthLayouts";
 import Signin from "../Pages/Signin";
 import Signup from "../Pages/Signup";
 import PrivateRoutes from "../Private/PrivateRoutes";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -23,7 +24,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        Component: MyProfile,
+        element: (
+          <PrivateRoutes>
+            <MyProfile></MyProfile>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "/blog",
@@ -58,5 +63,9 @@ export const router = createBrowserRouter([
         Component: Signup,
       },
     ],
+  },
+  {
+    path: "/*",
+    Component: ErrorPage,
   },
 ]);
