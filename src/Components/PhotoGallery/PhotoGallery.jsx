@@ -76,6 +76,10 @@ const PhotoGallery = () => {
         <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
           {galleryImages.map((image, index) => (
             <div
+              data-aos="fade-up"
+              data-aos-delay={index * 100} // staggered animation
+              data-aos-duration="800"
+              data-aos-easing="ease-out-cubic"
               key={index}
               className={`relative overflow-hidden rounded shadow-xl  ${image.classes}`}
             >

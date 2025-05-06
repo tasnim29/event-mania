@@ -36,6 +36,10 @@ const Testimonial = () => {
       <div className="container flex flex-col items-center justify-center mx-auto lg:flex-row lg:flex-wrap lg:justify-evenly lg:px-10 ">
         {testimonials.map((item, index) => (
           <div
+            data-aos="fade-right"
+            data-aos-delay={index * 100}
+            data-aos-duration="900"
+            data-aos-easing="ease-out-cubic"
             key={index}
             className="flex flex-col max-w-sm mx-4 my-6 shadow-lg bg-gray-700 rounded-xl hover:scale-105 cursor-pointer"
           >

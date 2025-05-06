@@ -14,5 +14,5 @@
 }
 
 a.active {
-  color: indigo;
+  @apply btn btn-outline;
 }

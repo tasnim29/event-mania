@@ -34,13 +34,14 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-secondary shadow-sm px-20 ">
+    <div className="navbar bg-gray-800 shadow-sm px-4 lg:px-20">
+      {/* Navbar Start */}
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-6 w-6 text-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -49,46 +50,56 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
+                d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
-          </div>
+          </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {links}
           </ul>
         </div>
-        <div className="flex gap-3">
-          <img className="w-10 h-10" src={logo} alt="" />
-          <a className="text-2xl font-bold ml-2 text-white">Event Mania</a>
+        <div className="flex items-center gap-2">
+          <img className="w-10 h-10" src={logo} alt="Logo" />
+          <span className="text-white font-bold text-xl">Event Mania</span>
         </div>
       </div>
 
+      {/* Navbar Center */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal space-x-4">{links}</ul>
+        <ul className="menu menu-horizontal px-1 space-x-3 text-white">
+          {links}
+        </ul>
       </div>
 
-      <div className="navbar-end space-x-2">
-        <div className="relative group cursor-pointer">
-          {user && (
+      {/* Navbar End */}
+      <div className="navbar-end gap-3">
+        {user && (
+          <div className="relative group">
             <img
-              className="w-8 h-8 rounded-full hover:"
+              className="w-8 h-8 rounded-full border-2 border-white cursor-pointer"
               src={user.photoURL}
-              alt=""
+              alt="User"
             />
-          )}
-          <div className="absolute text-white font-semibold -top-0.5 -left-17   opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-            {user?.displayName}
+            <div className=" absolute right-4  -bottom-10 text-white text-xs bg-black bg-opacity-75 px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition z-10">
+              {user.displayName}
+            </div>
           </div>
-        </div>
+        )}
         {user ? (
-          <button onClick={handleSignOut} className="btn btn-sm mr-2">
+          <button
+            onClick={handleSignOut}
+            className="btn btn-sm btn-outline text-white border-white hover:bg-white hover:text-gray-800"
+          >
             Sign Out
           </button>
         ) : (
-          <Link to="/auth/signin" className="btn btn-sm mr-2">
+          <Link
+            to="/auth/signin"
+            className="btn btn-sm btn-outline text-white border-white hover:bg-white hover:text-gray-800"
+          >
             Sign In
           </Link>
         )}

@@ -13,7 +13,14 @@ const UpcomingEvents = () => {
       </div>
       <div className="px-4  grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {data.map((event, index) => (
-          <div key={index} className="card bg-base-100 shadow-2xl">
+          <div
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+            data-aos-duration="800"
+            data-aos-easing="ease-out-cubic"
+            key={index}
+            className="card bg-base-100 shadow-2xl hover:shadow-secondary transition-shadow duration-500"
+          >
             <figure className=" overflow-hidden g">
               <img
                 src={event.thumbnail}
