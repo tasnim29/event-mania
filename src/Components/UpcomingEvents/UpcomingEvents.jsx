@@ -7,7 +7,7 @@ const UpcomingEvents = () => {
   return (
     <>
       <div className="container flex flex-col items-center mx-auto  md:p-10 md:px-12">
-        <h1 className="p-4 text-4xl text-primary shadow-2xl font-semibold leading-none text-center">
+        <h1 className="p-4 text-4xl text-primary shadow-2xl font-bold leading-none text-center">
           UpComing Events
         </h1>
       </div>

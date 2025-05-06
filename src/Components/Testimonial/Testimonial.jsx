@@ -29,7 +29,7 @@ const Testimonial = () => {
   return (
     <section>
       <div className="container flex flex-col items-center mx-auto  md:p-10 md:px-12">
-        <h1 className="p-4 text-4xl text-primary shadow-2xl font-semibold leading-none text-center">
+        <h1 className="p-4 text-4xl text-primary shadow-2xl font-bold leading-none text-center">
           What people are saying about us
         </h1>
       </div>
@@ -37,7 +37,7 @@ const Testimonial = () => {
         {testimonials.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col max-w-sm mx-4 my-6 shadow-lg bg-gray-700"
+            className="flex flex-col max-w-sm mx-4 my-6 shadow-lg bg-gray-700 rounded-xl hover:scale-105 cursor-pointer"
           >
             <div className="px-4 py-12 rounded-t-lg sm:px-8 md:px-12 ">
               <p className="relative px-6 py-1 text-lg italic text-center text-white">
