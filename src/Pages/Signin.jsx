@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
@@ -6,7 +6,10 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { setUser, signInUser, googleSignInUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const emailRef = useRef();
+  const { setUser, signInUser, googleSignInUser, setEmail } =
+    useContext(AuthContext);
   const location = useLocation();
   //   console.log(location);
   const navigation = useNavigate();
@@ -53,6 +56,13 @@ const Signin = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+  // forget password
+  const handleForgetPassword = () => {
+    const email = emailRef.current.value;
+    setEmail(email);
+
+    navigate("/auth/forgetPassword");
   };
 
   return (
@@ -103,6 +113,7 @@ const Signin = () => {
             Email address
           </label>
           <input
+            ref={emailRef}
             type="email"
             name="email"
             className="w-full mt-1 px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-primary"
@@ -116,7 +127,11 @@ const Signin = () => {
             <label htmlFor="password" className="text-sm text-gray-300">
               Password
             </label>
-            <a href="#" className="text-xs text-primary hover:underline">
+            <a
+              onClick={handleForgetPassword}
+              href="#"
+              className="text-xs text-primary hover:underline"
+            >
               Forgot password?
             </a>
           </div>

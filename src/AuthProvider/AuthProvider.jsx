@@ -12,6 +12,8 @@ import {
 import { auth } from "../firebase/firebase.config";
 
 const AuthProvider = ({ children }) => {
+  const [email, setEmail] = useState("");
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   //   sign up
@@ -24,6 +26,7 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+
   // google login
   const googleProvider = new GoogleAuthProvider();
 
@@ -44,6 +47,8 @@ const AuthProvider = ({ children }) => {
 
   const userInfo = {
     user,
+    email,
+    setEmail,
     loading,
     setUser,
     signUpUser,
