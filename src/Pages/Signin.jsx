@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signin = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { setUser, signInUser, googleSignInUser } = useContext(AuthContext);
   const location = useLocation();
   //   console.log(location);
@@ -118,13 +120,22 @@ const Signin = () => {
               Forgot password?
             </a>
           </div>
-          <input
-            type="password"
-            name="password"
-            className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-primary"
-            placeholder="********"
-            required
-          />
+
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              className="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="********"
+              required
+            />
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute text-white right-4 top-2.5 cursor-pointer"
+            >
+              {showPassword ? <FaEyeSlash size={24} /> : <FaEye size={24} />}
+            </span>
+          </div>
         </div>
 
         <button type="submit" className="btn btn-outline btn-primary w-full">

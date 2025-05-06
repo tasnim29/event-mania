@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Signup = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const navigation = useNavigate();
   const { setUser, signUpUser, updateUserProfile, googleSignInUser } =
     useContext(AuthContext);
@@ -112,13 +114,21 @@ const Signup = () => {
           {/* Password */}
           <div className="space-y-1">
             <label className="block text-sm text-gray-300">Password</label>
-            <input
-              type="password"
-              name="password"
-              className="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Choose a password"
-              required
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                className="w-full px-4 py-2 rounded-md bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Choose a password"
+                required
+              />
+              <span
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute text-white right-4 top-2.5 cursor-pointer"
+              >
+                {showPassword ? <FaEyeSlash size={24} /> : <FaEye size={24} />}
+              </span>
+            </div>
           </div>
           <div className="my-6">
             <button
