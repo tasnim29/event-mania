@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
   const { user, updateUserProfile, setUser } = useContext(AuthContext);
@@ -26,6 +27,9 @@ const MyProfile = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 space-y-10  lg:mt-24 mt-16  w-11/12 mx-auto">
       {/* left div */}
+      <Helmet>
+        <title>EventMania | Profile</title>
+      </Helmet>
       <div className="bg-gray-800 max-w-md w-full mx-auto p-6 shadow-2xl rounded-xl flex flex-col items-center text-center ">
         <img
           src={user.photoURL}

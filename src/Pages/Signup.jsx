@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -70,6 +71,9 @@ const Signup = () => {
   };
   return (
     <div className="w-full max-w-md p-8 rounded-xl shadow-lg bg-gray-900 mx-auto my-16">
+      <Helmet>
+        <title>EventMania | SignUp</title>
+      </Helmet>
       <div className="space-y-6">
         <h1 className="text-3xl text-white font-bold text-center">
           Create an Account

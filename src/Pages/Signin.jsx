@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../AuthProvider/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -67,6 +68,9 @@ const Signin = () => {
 
   return (
     <div className="w-full max-w-md p-8 rounded-xl shadow-lg bg-gray-900 mx-auto my-16 text-white">
+      <Helmet>
+        <title>EventMania | SignIN</title>
+      </Helmet>
       <h2 className="mb-3 text-3xl font-bold text-center">
         Login to your account
       </h2>

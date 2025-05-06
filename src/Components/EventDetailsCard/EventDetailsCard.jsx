@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 
 const EventDetailsCard = ({ event }) => {
@@ -14,6 +15,9 @@ const EventDetailsCard = ({ event }) => {
   };
   return (
     <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-10 px-10">
+      <Helmet>
+        <title>EventMania | {event?.name || "Event Details"}</title>
+      </Helmet>
       <div className="md:flex">
         {/* Thumbnail */}
         <div className="md:w-1/2">

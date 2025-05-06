@@ -4,6 +4,7 @@ import { AuthContext } from "../AuthProvider/AuthContext";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import { toast, ToastContainer } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const ForgetPassword = () => {
   const { email } = useContext(AuthContext);
@@ -23,7 +24,13 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div>
+    <div className="py-30 px-5">
+      <Helmet>
+        <title>EventMania | ForgetPassword</title>
+      </Helmet>
+      <h1 className="text-center text-3xl  lg:text-5xl font-semibold text-gray-800 mb-5">
+        Reset Your password Here
+      </h1>
       <div className="bg-gray-800 max-w-md w-full mx-auto p-6 shadow-2xl rounded-xl mb-10">
         <form onSubmit={handleForgetPassword} className="fieldset space-y-2">
           <label className="label text-white" htmlFor="origin">
