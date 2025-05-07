@@ -77,7 +77,7 @@ const PhotoGallery = () => {
           {galleryImages.map((image, index) => (
             <div
               data-aos="fade-up"
-              data-aos-delay={index * 100} // staggered animation
+              data-aos-delay={index * 100}
               data-aos-duration="800"
               data-aos-easing="ease-out-cubic"
               key={index}
