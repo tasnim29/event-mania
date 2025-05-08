@@ -47,6 +47,7 @@ const Signup = () => {
       .catch((error) => {
         const errorMessage = error.message;
         console.log(errorMessage);
+        toast.warn("Already have an account with this email");
       });
   };
 

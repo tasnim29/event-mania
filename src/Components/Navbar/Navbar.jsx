@@ -21,13 +21,13 @@ const Navbar = () => {
   };
   const links = (
     <>
-      <li className="font-semibold text-xl text-white">
+      <li className="font-semibold text-xl text-primary">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="font-semibold text-xl text-white">
+      <li className="font-semibold text-xl text-primary">
         <NavLink to="/profile">My profile</NavLink>
       </li>
-      <li className="font-semibold text-xl text-white">
+      <li className="font-semibold text-xl text-primary">
         <NavLink to="/blog">Blog</NavLink>
       </li>
     </>
