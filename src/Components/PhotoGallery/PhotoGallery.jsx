@@ -76,19 +76,19 @@ const PhotoGallery = () => {
         <div className="container grid grid-cols-2 gap-4 p-4 mx-auto md:grid-cols-4">
           {galleryImages.map((image, index) => (
             <div
+              key={index}
+              className={`rounded shadow-xl overflow-hidden flex flex-col ${image.classes}`}
               data-aos="fade-up"
               data-aos-delay={index * 100}
               data-aos-duration="800"
               data-aos-easing="ease-out-cubic"
-              key={index}
-              className={`relative overflow-hidden rounded shadow-xl  ${image.classes}`}
             >
               <img
                 src={image.src}
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover flex-1"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gray-800  text-white text-sm p-2 text-center">
+              <div className="bg-gray-800 text-white text-xs p-2 text-center">
                 {image.caption}
               </div>
             </div>

@@ -10,7 +10,7 @@ const EventDetails = () => {
     const selectedEvent = data.find((event) => event.name == name);
     setEvent(selectedEvent);
   }, [data, name]);
-  //   console.log(event);
+
   return (
     <div>
       <EventDetailsCard event={event}></EventDetailsCard>

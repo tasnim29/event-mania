@@ -53,10 +53,9 @@ const Blog = () => {
               height="315"
               src="https://www.youtube.com/embed/10d0OS8IA2Q?si=OQN0TrOEuvoww4Vi"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
 
@@ -82,10 +81,9 @@ const Blog = () => {
               height="315"
               src="https://www.youtube.com/embed/jjrkCYw7EYk?si=x6KZi47pc-QZHxk2"
               title="YouTube video player"
-              frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
           <div className="mx-auto mt-8 text-gray-700 text-lg ">

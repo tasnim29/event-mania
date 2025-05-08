@@ -32,15 +32,14 @@ const Signup = () => {
     signUpUser(email, password)
       .then((userCredential) => {
         const userInformation = userCredential.user;
-        console.log(userInformation);
+
         updateUserProfile({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...userInformation, displayName: name, photoURL: photo });
             toast.success("Successfully Signed up");
             setTimeout(() => navigation("/"), 1500);
           })
-          .catch((error) => {
-            console.log(error);
+          .catch(() => {
             setUser(userInformation);
           });
       })

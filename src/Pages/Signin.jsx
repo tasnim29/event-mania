@@ -34,9 +34,7 @@ const Signin = () => {
         );
         // navigation(`${location.state ? location.state : "/"}`);
       })
-      .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
+      .catch(() => {
         toast.error("Invalid password");
       });
   };

@@ -8,7 +8,6 @@ import { Helmet } from "react-helmet-async";
 
 const ForgetPassword = () => {
   const { email } = useContext(AuthContext);
-  //   console.log(email);
 
   const handleForgetPassword = (e) => {
     e.preventDefault();

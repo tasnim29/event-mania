@@ -13,7 +13,7 @@ If you are developing a production application, we recommend using TypeScript wi
 
 1.Project name:Event Mania
 2.Purpose:Its an website where users can find many events which they can join and enjoy
-3.Live Url:
+3.Live Url: https://assignment-9-bc372.web.app/
 4.Key features: they can select which ever event they want to join and a secure authentication system
 5.npm packages:@tailwindcss/vite": "^4.1.5",
 "aos": "^2.3.4",
