@@ -108,10 +108,9 @@ const EventDetailsCard = ({ event }) => {
             type="text"
             id="origin"
             className="input input-bordered w-full text-black"
-            placeholder="From city"
+            placeholder="Enter your name"
           />
 
-          {/* Destination */}
           <label
             className="label text-primary text-xl font-bold"
             htmlFor="destination"
@@ -123,7 +122,7 @@ const EventDetailsCard = ({ event }) => {
             type="text"
             id="destination"
             className="input input-bordered w-full text-black"
-            placeholder="To city"
+            placeholder="Enter email"
           />
 
           <button
