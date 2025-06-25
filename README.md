@@ -26,14 +26,6 @@ Event Mania is a full-stack web application where users can discover and explore
 - SweetAlert2 / Toastify
 - Aos Animation
 
-### ⚙️ Backend
-
-- Node.js
-- Express.js
-- MongoDB (Optional if used for extended features)
-- Dotenv
-- CORS
-
 ---
 
 ## 🚀 Features
