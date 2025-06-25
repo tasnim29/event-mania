@@ -103,3 +103,7 @@ VITE_FIREBASE_APP_ID=your_app_id
 ```
 npm run dev
 ```
+
+## 🔗 Relevant Links
+
+### 🔥 Firebase Docs: https://firebase.google.com/docs
