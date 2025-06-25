@@ -1,29 +1,74 @@
-# React + Vite
+# 🎉 Event Mania – A Local Event Discovery Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Event Mania is a full-stack web application where users can discover and explore a wide range of upcoming local events—tech conferences, art exhibitions, workshops, sports events, and more. Authenticated users can view detailed information, reserve seats, manage their profile, and enjoy a seamless user experience through an intuitive and responsive UI.
 
-Currently, two official plugins are available:
+![Banner](https://i.ibb.co/4RmjFnD/event-explorer-banner.jpg) <!-- Replace with your actual banner screenshot -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔗 Live Site & Repositories
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🌐 [Live Website](https://event-explorer-client.netlify.app)
 
-1.Project name:Event Mania
-2.Purpose:Its an website where users can find many events which they can join and enjoy
-3.Live Url: https://assignment-9-bc372.web.app/
-4.Key features: they can select which ever event they want to join and a secure authentication system
-5.npm packages:@tailwindcss/vite": "^4.1.5",
-"aos": "^2.3.4",
-"firebase": "^11.6.1",
-"react": "^19.0.0",
-"react-dom": "^19.0.0",
-"react-helmet-async": "^2.0.5",
-"react-icons": "^5.5.0",
-"react-router": "^7.5.3",
-"react-toastify": "^11.0.5",
-"sweetalert2": "^11.21.0",
-"swiper": "^11.2.6",
-"tailwindcss":
+---
+
+## 🧑‍💻 Technologies Used
+
+### 🌐 Frontend
+
+- React.js
+- React Router DOM
+- Firebase Auth
+- Tailwind CSS + DaisyUI
+- Swiper Slider
+- React Hook Form
+- React Icons
+- SweetAlert2 / Toastify
+- Aos Animation
+
+### ⚙️ Backend
+
+- Node.js
+- Express.js
+- MongoDB (Optional if used for extended features)
+- Dotenv
+- CORS
+
+---
+
+## 🚀 Features
+
+- 👤 **Protected Routes** using React Router DOM
+- 📅 **Upcoming Events Showcase** with details
+- 📝 **Event Details Page** with seat reservation form
+- 📄 **User Profile Page** (edit name & photo using `updateProfile()`)
+- 👁️ **Toggle Password Visibility** (eye icon toggle on register form)
+- 📧 **Forget Password Feature** (reset via Firebase)
+- 🧭 **Dynamic Title** per page (React Helmet)
+- 🌙 **Fully Responsive Design** for mobile, tablet, desktop
+- 🔄 **Auth Persistence** on Reload using `onAuthStateChanged`
+- 🧾 **404 Not Found Page**
+- ➕ **Extra Protected Route** (e.g., Bookmarked Events or Reserved List)
+- 🎠 **Interactive Slider** (Swiper.js)
+- 🎨 **AOS Animation** on scroll elements
+
+---
+
+## 📦 NPM Dependencies
+
+### Frontend
+
+```bash
+"react"
+"react-dom"
+"react-router-dom"
+"firebase"
+"react-hook-form"
+"tailwindcss"
+"daisyui"
+"swiper"
+"aos"
+"react-icons"
+"react-helmet"
+"sweetalert2"
+```
