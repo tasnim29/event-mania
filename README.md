@@ -2,13 +2,13 @@
 
 Event Mania is a full-stack web application where users can discover and explore a wide range of upcoming local events—tech conferences, art exhibitions, workshops, sports events, and more. Authenticated users can view detailed information, reserve seats, manage their profile, and enjoy a seamless user experience through an intuitive and responsive UI.
 
-![Banner](https://i.ibb.co/4RmjFnD/event-explorer-banner.jpg) <!-- Replace with your actual banner screenshot -->
+![Banner](https://i.ibb.co/q3nDHz93/Screenshot-2025-06-25-133104.png) <!-- Replace with your actual banner screenshot -->
 
 ---
 
 ## 🔗 Live Site & Repositories
 
-🌐 [Live Website](https://event-explorer-client.netlify.app)
+🌐 [Live Website](https://assignment-9-bc372.web.app/)
 
 ---
 
@@ -71,4 +71,35 @@ Event Mania is a full-stack web application where users can discover and explore
 "react-icons"
 "react-helmet"
 "sweetalert2"
+```
+
+---
+
+## 🛠️ How to Run Locally
+
+### 🔽 Step 1: Clone the Project
+
+```bash
+git clone https://github.com/yourusername/event-explorer-client.git
+cd event-explorer-client
+npm install
+```
+
+### 🔐 Step 2: Setup Environment Variables
+
+```bash
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_project.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+⚠️ Do NOT push this .env file to GitHub
+
+### ▶️ Step 3: Run the App
+
+```
+npm run dev
 ```
